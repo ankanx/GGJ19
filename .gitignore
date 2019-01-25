@@ -1,12 +1,12 @@
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
-[Ll]ogs/
+GGJ19/[Ll]ibrary/
+GGJ19/[Tt]emp/
+GGJ19/[Oo]bj/
+GGJ19/[Bb]uild/
+GGJ19/[Bb]uilds/
+GGJ19/[Ll]ogs/
 
 # Never ignore Asset meta data
-![Aa]ssets/**/*.meta
+GGJ19/![Aa]ssets/**/*.meta
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # [Aa]ssets/AssetStoreTools*
