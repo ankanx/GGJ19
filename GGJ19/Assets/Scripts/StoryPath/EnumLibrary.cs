@@ -19,6 +19,7 @@ public enum Choise
     Second,
     Third,
     None,
+    Waited,
 };
 
 public enum Scene
