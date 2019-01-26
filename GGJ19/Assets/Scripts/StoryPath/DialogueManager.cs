@@ -87,7 +87,6 @@ public class DialogueManager : MonoBehaviour
     {
         if (scene == Scene.Start)
         {
-            Debug.Log("I enter here");
             List<List<string>> playerSpeachStart = FindObjectOfType<Dialogue>().PlayerSpeachStart;
             StartDialogue(playerSpeachStart);
         }
