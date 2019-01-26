@@ -59,6 +59,7 @@ public class PathHandler : MonoBehaviour
             CheckCurrentChoiseAndLoadNextScene();
         }
 
+        // THIS IS WHAT U TRIGGER LATER AFTER DIALOUGE
         if (Input.GetKeyDown(KeyCode.A))
         {
             ChoiseCanvas.enabled = true;
@@ -66,6 +67,7 @@ public class PathHandler : MonoBehaviour
             choiseHandler.active = true;
             choiseHandler.ChoiseTimer.GetComponent<TimerProgress>().active = true;
         }
+        /////////////////////////////////////////////
     }
 
     public void CheckLastChoise()
