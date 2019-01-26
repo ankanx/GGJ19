@@ -33,7 +33,7 @@ public class DialogueManager : MonoBehaviour
     {
         // TODO: now here it says the DialogueManager name
         nameText.text = gameObject.name;
-        // could we sent this index by parameter and that means the conversation of the each scene?
+        // this index is the first list of strings of the listOfDialogue, change it to loop to the next ones or make it different
         int index = 0;
         List<string> dialogue = listOfDialogue[index];
 

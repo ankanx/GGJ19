@@ -20,7 +20,6 @@ public class Dialogue : MonoBehaviour
             "The portal closed with a last sucking noise.",
             "Poppy watched as the last view of home flickered out of existence. It was done.",
             "Archmage Bevac would never be able to enslave her world."
-
         }
     };
 
