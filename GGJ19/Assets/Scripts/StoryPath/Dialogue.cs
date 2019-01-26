@@ -19,7 +19,8 @@ public class Dialogue : MonoBehaviour
             "It was like someone had pulled the plug out of a bathtub.",
             "The portal closed with a last sucking noise.",
             "Poppy watched as the last view of home flickered out of existence. It was done.",
-            "Archmage Bevac would never be able to enslave her world."
+            "Archmage Bevac would never be able to enslave her world.",
+            "She threw one last glance at the portal altar before:"
         }
     };
 
@@ -63,6 +64,19 @@ public class Dialogue : MonoBehaviour
             "The pavement came closer at lightning speed.",
             "She prepared to meed her maker.",
             "Poppy died."
+        }
+    };
+
+    /*
+* Contains a list of lists of strings, each list of strings is
+* a conversation element for the Intro
+*/
+    public List<List<string>> Intro = new List<List<string>>{
+        new List<string> {
+            "An evil mage Bevac has threatened to take over your world.",
+            "You and your comrades bravely traveled into a magical dimension to stop the mage.",
+            "In the end, the only way to stop the mage was to destroy the portal altar.",
+            "You managed to get your comrades through the portal, before making the sacrifice of staying behind in to save everyone in your world. " 
         }
     };
 

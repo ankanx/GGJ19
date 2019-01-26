@@ -31,8 +31,9 @@ public class PathHandler : MonoBehaviour
                   Invoke("Firstscene", 1);
                 break;
 
-            case "Template_scene":
+            case "IntroScene":
                 thisScene = Scene.Start;
+                Invoke("IntroScene", 1);
                 break;
             case "Template_scene_2":
                 thisScene = Scene.Template;
@@ -63,6 +64,11 @@ public class PathHandler : MonoBehaviour
     public void Firstscene()
     {
         TriggerSpeach("start");
+    }
+
+    public void IntroScene()
+    {
+        TriggerSpeach("Intro");
     }
 
     public void TriggerChoise()
@@ -165,5 +171,10 @@ public class PathHandler : MonoBehaviour
     public void ReturnToMainScreen()
     {
         loaderofscenes.LoadSCenesViaLoadingScene(1);
+    }
+
+    public void StartAdventure()
+    {
+        loaderofscenes.LoadSceneFromMenu(2);
     }
 }

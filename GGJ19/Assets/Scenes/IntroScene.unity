@@ -739,7 +739,7 @@ MonoBehaviour:
   pathhandler: {fileID: 1709572729}
   nameText: {fileID: 389349636}
   dialogueText: {fileID: 1468593762}
-  InitDialogue: start
+  InitDialogue: intro
 --- !u!4 &663558942
 Transform:
   m_ObjectHideFlags: 0
@@ -1189,8 +1189,6 @@ GameObject:
   - component: {fileID: 1106410976}
   - component: {fileID: 1106410978}
   - component: {fileID: 1106410977}
-  - component: {fileID: 1106410979}
-  - component: {fileID: 1106410980}
   m_Layer: 5
   m_Name: Character_one
   m_TagString: Untagged
@@ -1214,7 +1212,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.10282813, y: 0}
   m_AnchorMax: {x: 0.10282813, y: 0}
-  m_AnchoredPosition: {x: 557, y: 552}
+  m_AnchoredPosition: {x: 1073, y: 552}
   m_SizeDelta: {x: 1630, y: 1200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1106410977
@@ -1237,7 +1235,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: dc175d67d92f07f47b053e12a25fd3c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5f6822d77940c24382e5bf61a9bf7e2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1254,37 +1252,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1106410975}
   m_CullTransparentMesh: 0
---- !u!95 &1106410979
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106410975}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d4acec39508e7a84fa38fdd6ed9e3a59, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1106410980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106410975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d00fc93b89fdc7d4394f2779f8463951, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1195051372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2859,11 +2826,11 @@ MonoBehaviour:
     lineCount: 0
     pageCount: 0
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:

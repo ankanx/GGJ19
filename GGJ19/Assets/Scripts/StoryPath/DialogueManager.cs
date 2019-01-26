@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
 
     public string InitDialogue;
-    private string currentdialog = "";
+    public string currentdialog = "";
 
     private bool sceneEnded = false;
     // We can change this if we think there is a better approach
@@ -95,6 +95,10 @@ public class DialogueManager : MonoBehaviour
         {
             pathhandler.Invoke("ReturnToMainScreen", 2);
         }
+        else if(currentdialog == "Intro")
+        {
+            pathhandler.Invoke("StartAdventure", 3);
+        }
         else
         {
             pathhandler.TriggerChoise();
@@ -116,6 +120,13 @@ public class DialogueManager : MonoBehaviour
         {
             nameText.text = "Narrator";
             List<List<string>> playerSpeachStart = FindObjectOfType<Dialogue>().FallingTodeath;
+            StartDialogue(playerSpeachStart);
+        }
+
+        if (dialogue == "Intro")
+        {
+            nameText.text = "Narrator";
+            List<List<string>> playerSpeachStart = FindObjectOfType<Dialogue>().Intro;
             StartDialogue(playerSpeachStart);
         }
 
