@@ -1202,6 +1202,7 @@ MonoBehaviour:
   ChoiseThree: {fileID: 438809793}
   ChoiseTimer: {fileID: 1611871721}
   MadeChoise: 0
+  decided: 0
 --- !u!1 &1291724939
 GameObject:
   m_ObjectHideFlags: 0
@@ -1907,6 +1908,7 @@ MonoBehaviour:
   choiseHandler: {fileID: 1195051376}
   DialogObj: {fileID: 762920635}
   ChoiseObj: {fileID: 309096146}
+  thisScene: 0
 --- !u!114 &1709572730
 MonoBehaviour:
   m_ObjectHideFlags: 0

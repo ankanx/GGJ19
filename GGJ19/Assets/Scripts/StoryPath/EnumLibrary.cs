@@ -24,6 +24,7 @@ public enum Choise
 
 public enum Scene
 {
-    Start
+    Start,
+    Template
 }
 
