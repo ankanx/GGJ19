@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 49283bd364258ed42ab527f13eabc5c8
   - enabled: 1
-    path: Assets/Scenes/Template_scene.unity
+    path: Assets/Scenes/StartScene.unity
     guid: 408b7680610094c47a87bd4c388dece0
   - enabled: 1
     path: Assets/Scenes/Template_scene_2.unity
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoadingScene.unity
     guid: 4c257bedae30c904cbc509051bed6db0
+  - enabled: 1
+    path: Assets/Scenes/FallingToDeathScene.unity
+    guid: f816a432a7bda184686dd4a38b6d096a
   m_configObjects: {}

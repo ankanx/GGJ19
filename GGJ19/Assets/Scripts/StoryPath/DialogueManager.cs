@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
     public PathHandler pathhandler;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
+
+    public string InitDialogue;
+    private string currentdialog = "";
 
     private bool sceneEnded = false;
     // We can change this if we think there is a better approach
@@ -19,8 +23,6 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
-
-        Invoke("startdialog", 2);
     
     }
 
@@ -28,24 +30,13 @@ public class DialogueManager : MonoBehaviour
     {
         if (!sceneEnded)
         {
-            TriggerDialogue(Choise.First, Scene.Start);
-            sceneEnded = true;
-        }
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Return) && (!sceneEnded))
-        {
-            TriggerDialogue(Choise.First, Scene.Start);
+            TriggerDialogue(InitDialogue);
             sceneEnded = true;
         }
     }
 
     public void StartDialogue(List<List<string>> listOfDialogue)
     {
-        // TODO: now here it says the DialogueManager name
-        nameText.text = gameObject.name;
         // this index is the first list of strings of the listOfDialogue, change it to loop to the next ones or make it different
         int index = 0;
         List<string> dialogue = listOfDialogue[index];
@@ -86,22 +77,45 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator WaitFiveSeconds()
     {
-        yield return new WaitForSeconds(3.0f);
+        if(currentdialog == "fallingtodeath")
+        {
+            yield return new WaitForSeconds(2.0f);
+        }
+        else
+        {
+            yield return new WaitForSeconds(3.0f);
+        }
         // if we want the text just to keep going without pressing continue, use DisplayNextSentence
         DisplayNextSentence();
     }
 
     void EndDialogue()
     {
-        pathhandler.TriggerChoise();
+        if(currentdialog == "fallingtodeath")
+        {
+            pathhandler.Invoke("ReturnToMainScreen", 2);
+        }
+        else
+        {
+            pathhandler.TriggerChoise();
+        }
         Debug.Log("End of conversation");
     }
 
-    public void TriggerDialogue(Choise choise, Scene scene)
+    public void TriggerDialogue(string dialogue)
     {
-        if (scene == Scene.Start)
+        currentdialog = dialogue;
+        if (dialogue == "start")
         {
+            nameText.text = "Narrator";
             List<List<string>> playerSpeachStart = FindObjectOfType<Dialogue>().PlayerSpeachStart;
+            StartDialogue(playerSpeachStart);
+        }
+
+        if(dialogue == "fallingtodeath")
+        {
+            nameText.text = "Narrator";
+            List<List<string>> playerSpeachStart = FindObjectOfType<Dialogue>().FallingTodeath;
             StartDialogue(playerSpeachStart);
         }
 

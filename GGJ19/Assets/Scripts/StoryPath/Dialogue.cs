@@ -53,5 +53,18 @@ public class Dialogue : MonoBehaviour
         }
     };
 
+    /*
+    * Contains a list of lists of strings, each list of strings is
+    * a conversation element for the CHARACTER DEATH BY FALLING
+    */
+    public List<List<string>> FallingTodeath = new List<List<string>>{
+        new List<string> {
+            "Poppy exits from the balcony...",
+            "The pavement came closer at lightning speed.",
+            "She prepared to meed her maker.",
+            "Poppy died."
+        }
+    };
+
 
 }
