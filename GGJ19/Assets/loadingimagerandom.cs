@@ -7,6 +7,7 @@ public class loadingimagerandom : MonoBehaviour
 
     Sprite templatekun;
     Sprite test;
+    Sprite poppy;
     List<Sprite> characterList = new List<Sprite>();
 
     
@@ -16,8 +17,10 @@ public class loadingimagerandom : MonoBehaviour
     {
         templatekun = Resources.Load<Sprite>("Images/PLACEHOLDER_CH");
         test = Resources.Load<Sprite>("Images/Progress");
+        poppy = Resources.Load<Sprite>("Images/poppy");
         characterList.Add(templatekun);
         characterList.Add(test);
+        characterList.Add(poppy);
         int ran = Random.Range(0, characterList.Count);
         Debug.Log(ran);
         GetComponent<Image>().sprite = characterList[ran];
