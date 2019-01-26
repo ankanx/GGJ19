@@ -8,6 +8,7 @@ public class SaveState : MonoBehaviour
 
     public List<SceneChoise> ChoisesMade = new List<SceneChoise>();
     public int num;
+    public int SceneToLoad;
 
     private void Start()
     {

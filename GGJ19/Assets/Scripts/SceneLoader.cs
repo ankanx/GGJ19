@@ -21,4 +21,10 @@ public class SceneLoader : MonoBehaviour {
     {
         SceneManager.LoadScene(SceneIndex);
     }
+
+    public void LoadSCenesViaLoadingScene(int SceneIndex)
+    {
+        GameObject.FindGameObjectWithTag("SaveStateHandler").GetComponent<SaveState>().SceneToLoad = SceneIndex;
+        SceneManager.LoadScene(4);
+    }
 } 
