@@ -3,54 +3,54 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
-
-public class TimerProgress : MonoBehaviour
+public class loading : MonoBehaviour
 {
     Image image;
     public float time;
     public float timetofinish = 10;
     TextMeshProUGUI text;
-    public bool hasTime = true;
-    public bool active = false;
+    SaveState Savestatehandler;
+
     // Start is called before the first frame update
     void Start()
     {
+        Savestatehandler = GameObject.FindGameObjectWithTag("SaveStateHandler").GetComponent<SaveState>();
         text = GetComponentInChildren<TextMeshProUGUI>();
         image = GetComponent<Image>();
-        time = timetofinish;
+        time = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(time > 0 && hasTime && active)
+        if (time < timetofinish)
         {
 
-            if ((int)time > 5)
+            if ((int)time > 0)
             {
-                text.color = Color.green;
+                text.text = "Loading .";
             }
 
-            if ((int)time < 5)
+            if ((int)time > 1)
             {
-                text.color = Color.yellow;
+                text.text = "Loading . .";
             }
 
-
-            if ((int)time < 1)
+            if ((int)time > 2)
             {
-                text.color = Color.red;
+                text.text = "Loading . . .";
             }
-            time -= Time.deltaTime;
+
+            time += Time.deltaTime;
             image.fillAmount = time / timetofinish;
-            text.text = "" + (int)time;
 
         }
-        else if(time <= 0 && active)
+        else
         {
-            hasTime = false;
+            SceneManager.LoadScene(Savestatehandler.SceneToLoad);
         }
-        
+
     }
 }

@@ -6,7 +6,9 @@ public class SaveState : MonoBehaviour
 {
     public static SaveState Instance { get; set; }
 
-    public List<SceneChoise> ChoisesMade;
+    public List<SceneChoise> ChoisesMade = new List<SceneChoise>();
+    public int num;
+    public int SceneToLoad;
 
     private void Start()
     {
@@ -20,8 +22,13 @@ public class SaveState : MonoBehaviour
         {
             Instance = this;
         }
+        ChoisesMade.Add(null);
+    }
 
-        ChoisesMade = new List<SceneChoise>();
+    private void OnLevelWasLoaded(int level)
+    {
+        num = ChoisesMade.Count;
+        Debug.Log(this.name + ChoisesMade.Count);
     }
 
 }

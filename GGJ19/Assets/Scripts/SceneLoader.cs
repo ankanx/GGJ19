@@ -10,20 +10,21 @@ public class SceneLoader : MonoBehaviour {
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
-
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-        }
     }
 
     public void LoadScene (int SceneIndex,SaveData save)
     {
         SceneManager.LoadScene(SceneIndex);   
+    }
+
+    public void LoadSceneFromMenu(int SceneIndex)
+    {
+        SceneManager.LoadScene(SceneIndex);
+    }
+
+    public void LoadSCenesViaLoadingScene(int SceneIndex)
+    {
+        GameObject.FindGameObjectWithTag("SaveStateHandler").GetComponent<SaveState>().SceneToLoad = SceneIndex;
+        SceneManager.LoadScene(4);
     }
 } 
