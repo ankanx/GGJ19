@@ -2,28 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dialogue : MonoBehaviour
+[System.Serializable]
+public class Dialogue
 {
+
+    public string name;
+    public string[] sentences;
+
     /*
+     * 
      * Contains a list of lists of strings, each list of strings is
      * a conversation element for the PLAYER
      */
     public List<List<string>> PlayerSpeach = new List<List<string>>{
-            new List<string> {
-                ""
-            },
-            new List<string> {
-                "",
-                ""
-            },
-            new List<string> {
-                "",
-                ""
-            }
-     };
+        new List<string> {
+            ""
+        },
+        new List<string> {
+            "",
+            ""
+        },
+        new List<string> {
+            "",
+            ""
+        }
+    };
 
-
-     /*
+    /*
      * Contains a list of lists of strings, each list of strings is
      * a conversation element for the CHARACTER1
      */
@@ -40,4 +45,6 @@ public class Dialogue : MonoBehaviour
             ""
         }
     };
+
+
 }
