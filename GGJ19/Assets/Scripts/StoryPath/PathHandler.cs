@@ -8,10 +8,21 @@ public class PathHandler : MonoBehaviour
     public List<SceneChoise> ChoisesMade;
     public SaveState SaveState;
     public ChoiseHandler choiseHandler;
+    public GameObject DialogObj;
+    public GameObject ChoiseObj;
+
+    private Canvas DialogueCanvas;
+    private Canvas ChoiseCanvas;
 
     // Start is called before the first frame update
     void Start()
     {
+        DialogueCanvas = DialogObj.GetComponent<Canvas>();
+        ChoiseCanvas = ChoiseObj.GetComponent<Canvas>();
+        ChoiseCanvas.enabled = false;
+        DialogueCanvas.enabled = true;
+
+
         SaveState = GameObject.FindGameObjectWithTag("SaveStateHandler").GetComponent<SaveState>();
         ChoisesMade = SaveState.ChoisesMade;
     }
