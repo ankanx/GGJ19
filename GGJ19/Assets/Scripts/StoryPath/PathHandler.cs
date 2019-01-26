@@ -58,17 +58,28 @@ public class PathHandler : MonoBehaviour
         {
             CheckCurrentChoiseAndLoadNextScene();
         }
-
-        // THIS IS WHAT U TRIGGER LATER AFTER DIALOUGE
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            ChoiseCanvas.enabled = true;
-            DialogueCanvas.enabled = false;
-            choiseHandler.active = true;
-            choiseHandler.ChoiseTimer.GetComponent<TimerProgress>().active = true;
-        }
-        /////////////////////////////////////////////
     }
+
+
+    public void TriggerChoise()
+    {
+        ChoiseCanvas.enabled = true;
+        DialogueCanvas.enabled = false;
+        choiseHandler.active = true;
+        choiseHandler.ChoiseTimer.GetComponent<TimerProgress>().active = true;
+    }
+
+    public void TriggerSpeach()
+    {
+        ChoiseCanvas.enabled = false;
+        DialogueCanvas.enabled = true;
+        choiseHandler.active = false;
+        choiseHandler.Resetchoises();
+        choiseHandler.ChoiseTimer.GetComponent<TimerProgress>().active = false;
+        choiseHandler.ChoiseTimer.GetComponent<TimerProgress>().Reset();
+
+    }
+
 
     public void CheckLastChoise()
     {

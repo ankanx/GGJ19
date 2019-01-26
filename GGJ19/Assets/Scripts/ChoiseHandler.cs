@@ -59,4 +59,13 @@ public class ChoiseHandler : MonoBehaviour
         ChoiseTimer.GetComponent<TimerProgress>().hasTime = false;
         decided = true;
     }
+
+
+
+    public void Resetchoises()
+    {
+        ChoiseOne.GetComponent<Button>().interactable = true;
+        ChoiseTwo.GetComponent<Button>().interactable = true;
+        ChoiseThree.GetComponent<Button>().interactable = true;
+    }
 }

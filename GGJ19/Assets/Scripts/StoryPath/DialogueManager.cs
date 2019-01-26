@@ -5,7 +5,8 @@ using UnityEngine.UI;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
-{ 
+{
+    public PathHandler pathhandler;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
@@ -18,6 +19,18 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
+
+        Invoke("startdialog", 2);
+    
+    }
+
+    public void startdialog()
+    {
+        if (!sceneEnded)
+        {
+            TriggerDialogue(Choise.First, Scene.Start);
+            sceneEnded = true;
+        }
     }
 
     void Update()
@@ -80,6 +93,7 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        pathhandler.TriggerChoise();
         Debug.Log("End of conversation");
     }
 

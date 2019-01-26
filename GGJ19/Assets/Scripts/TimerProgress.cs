@@ -53,4 +53,10 @@ public class TimerProgress : MonoBehaviour
         }
         
     }
+
+    public void Reset()
+    {
+        time = timetofinish;
+        hasTime = true;
+}
 }
