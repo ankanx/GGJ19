@@ -10,16 +10,6 @@ public class SceneLoader : MonoBehaviour {
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
-
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-        }
     }
 
     public void LoadScene (int SceneIndex,SaveData save)

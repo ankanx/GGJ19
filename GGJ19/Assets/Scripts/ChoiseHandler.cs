@@ -33,4 +33,20 @@ public class ChoiseHandler : MonoBehaviour
             }
         }
     }
+
+    public void makechoise(int choise)
+    {
+        switch (choise)
+        {
+            case 1:
+                MadeChoise = Choise.First;
+                break;
+            case 2:
+                MadeChoise = Choise.Second;
+                break;
+            case 3:
+                MadeChoise = Choise.Third;
+                break;
+        }
+    }
 }

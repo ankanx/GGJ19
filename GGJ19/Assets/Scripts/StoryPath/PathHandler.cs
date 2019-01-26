@@ -19,12 +19,13 @@ public class PathHandler : MonoBehaviour
     {
         DialogueCanvas = DialogObj.GetComponent<Canvas>();
         ChoiseCanvas = ChoiseObj.GetComponent<Canvas>();
-        ChoiseCanvas.enabled = false;
-        DialogueCanvas.enabled = true;
-
+        //ChoiseCanvas.enabled = false;
+        //DialogueCanvas.enabled = true;
 
         SaveState = GameObject.FindGameObjectWithTag("SaveStateHandler").GetComponent<SaveState>();
+
         ChoisesMade = SaveState.ChoisesMade;
+        Debug.Log(this.name + ChoisesMade.Count);
     }
 
     // Update is called once per frame
