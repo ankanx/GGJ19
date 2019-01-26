@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
+    private bool sceneEnded = false;
     // We can change this if we think there is a better approach
     // the queue is FIFO (First In First Out)
     public Queue<string> sentences;
@@ -19,15 +20,25 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    void Update()
     {
-        Debug.Log("Starting conversation with " + dialogue.name);
+        if (Input.GetKeyDown(KeyCode.Return) && (!sceneEnded))
+        {
+            TriggerDialogue(Choise.First, Scene.Start);
+            sceneEnded = true;
+        }
+    }
 
-        nameText.text = dialogue.name;
+    public void StartDialogue(List<List<string>> listOfDialogue)
+    {
+        // TODO: now here it says the DialogueManager name
+        nameText.text = gameObject.name;
+        // could we sent this index by parameter and that means the conversation of the each scene?
+        int index = 0;
+        List<string> dialogue = listOfDialogue[index];
 
         sentences.Clear();
-
-        foreach (string sentence in dialogue.sentences)
+        foreach (string sentence in dialogue)
         {
             sentences.Enqueue(sentence);
         }
@@ -40,6 +51,7 @@ public class DialogueManager : MonoBehaviour
         if (sentences.Count == 0)
         {
             EndDialogue();
+            sceneEnded = false;
             return;
         }
 
@@ -61,13 +73,24 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator WaitFiveSeconds()
     {
-        yield return new WaitForSeconds(5.0f);
-        // if we want the text just to keep going without pressing continue, we can use this
-        //DisplayNextSentence();
+        yield return new WaitForSeconds(3.0f);
+        // if we want the text just to keep going without pressing continue, use DisplayNextSentence
+        DisplayNextSentence();
     }
 
     void EndDialogue()
     {
         Debug.Log("End of conversation");
+    }
+
+    public void TriggerDialogue(Choise choise, Scene scene)
+    {
+        if (scene == Scene.Start)
+        {
+            Debug.Log("I enter here");
+            List<List<string>> playerSpeachStart = FindObjectOfType<Dialogue>().PlayerSpeachStart;
+            StartDialogue(playerSpeachStart);
+        }
+
     }
 }
