@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 49283bd364258ed42ab527f13eabc5c8
   - enabled: 1
-    path: Assets/Scenes/Template_scene.unity
+    path: Assets/Scenes/StartScene.unity
     guid: 408b7680610094c47a87bd4c388dece0
   - enabled: 1
     path: Assets/Scenes/Template_scene_2.unity
@@ -20,4 +20,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoadingScene.unity
     guid: 4c257bedae30c904cbc509051bed6db0
+  - enabled: 1
+    path: Assets/Scenes/FallingToDeathScene.unity
+    guid: f816a432a7bda184686dd4a38b6d096a
+  - enabled: 1
+    path: Assets/Scenes/IntroScene.unity
+    guid: 9a0ced1de2eb68844855d1dcc065ca93
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 334bb9b10ddf7744f917ddbac3a9e225
+  - enabled: 1
+    path: Assets/Scenes/scene2.unity
+    guid: 913df158bed0dc94fabfff05a2678ed1
+  - enabled: 1
+    path: Assets/Scenes/ChildInStairCaseScene.unity
+    guid: 044411b8037ec62439bf40b236fdf4ad
+  - enabled: 1
+    path: Assets/Scenes/Oldladyscene.unity
+    guid: 7ee563171c2373b48808f90f2f107dac
+  - enabled: 1
+    path: Assets/Scenes/ChildInStairCaseScene2.unity
+    guid: 72c489a5631b22247969e050b582716a
+  - enabled: 1
+    path: Assets/Scenes/ending1.unity
+    guid: ebd8964bbcd18ec40a1a9aef60e92d18
+  - enabled: 1
+    path: Assets/Scenes/ending2.unity
+    guid: d270eebabaa1ac84eb910ff8d20691c1
+  - enabled: 1
+    path: Assets/Scenes/ending3.unity
+    guid: eb79de7b32fd35b479d744fca2e52b7b
   m_configObjects: {}
