@@ -62,7 +62,7 @@ public class DialogueManager : MonoBehaviour
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
-        StartCoroutine(WaitFiveSeconds());
+        
     }
 
     IEnumerator TypeSentence(string sentence)
@@ -70,9 +70,11 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
+            yield return new WaitForSeconds(0.05f);
             dialogueText.text += letter;
             yield return null;
         }
+        StartCoroutine(WaitFiveSeconds());
     }
 
     IEnumerator WaitFiveSeconds()
