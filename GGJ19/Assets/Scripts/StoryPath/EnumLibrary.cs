@@ -25,6 +25,10 @@ public enum Choise
 public enum Scene
 {
     Start,
+    scene2,
+    ChildInStairCaseScene,
+    Oldladyscene,
+    ending,
     Template
 }
 

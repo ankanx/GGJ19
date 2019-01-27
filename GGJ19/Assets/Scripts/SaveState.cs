@@ -22,7 +22,7 @@ public class SaveState : MonoBehaviour
         {
             Instance = this;
         }
-        ChoisesMade.Add(null);
+
     }
 
     private void OnLevelWasLoaded(int level)

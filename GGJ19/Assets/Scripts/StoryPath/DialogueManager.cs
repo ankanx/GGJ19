@@ -93,16 +93,20 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        if(currentdialog == "fallingtodeath")
+        if (currentdialog == "fallingtodeath")
         {
             pathhandler.Invoke("ReturnToMainScreen", 2);
         }
-        else if(currentdialog == "Intro")
+        else if (currentdialog == "Intro")
         {
             pathhandler.Invoke("StartAdventure", 3);
         }
-        else
+        else if (currentdialog == "scene2A" || currentdialog == "scene2B" || currentdialog == "scene2C" || currentdialog == "child2" || currentdialog == "ending1" || currentdialog == "ending2" || currentdialog == "ending3" )
         {
+            pathhandler.nochoise();
+        }
+        else
+        { 
             pathhandler.TriggerChoise();
         }
         Debug.Log("End of conversation");
@@ -131,6 +135,71 @@ public class DialogueManager : MonoBehaviour
             List<List<string>> playerSpeachStart = FindObjectOfType<Dialogue>().Intro;
             StartDialogue(playerSpeachStart);
         }
+
+        if (dialogue == "scene2A")
+        {
+            nameText.text = "Narrator";
+            List<List<string>> playerSpeachStart = FindObjectOfType<Dialogue>().scene2A;
+            StartDialogue(playerSpeachStart);
+        }
+
+        if (dialogue == "scene2B")
+        {
+            nameText.text = "Narrator";
+            List<List<string>> playerSpeachStart = FindObjectOfType<Dialogue>().scene2B;
+            StartDialogue(playerSpeachStart);
+        }
+
+        if (dialogue == "scene2C")
+        {
+            nameText.text = "Narrator";
+            List<List<string>> playerSpeachStart = FindObjectOfType<Dialogue>().scene2C;
+            StartDialogue(playerSpeachStart);
+        }
+
+        if (dialogue == "child")
+        {
+            nameText.text = "Narrator";
+            List<List<string>> playerSpeachStart = FindObjectOfType<Dialogue>().child;
+            StartDialogue(playerSpeachStart);
+        }
+
+        if (dialogue == "child2")
+        {
+            nameText.text = "Narrator";
+            List<List<string>> playerSpeachStart = FindObjectOfType<Dialogue>().child2;
+            StartDialogue(playerSpeachStart);
+        }
+
+
+        if (dialogue == "lady")
+        {
+            nameText.text = "Narrator";
+            List<List<string>> playerSpeachStart = FindObjectOfType<Dialogue>().lady;
+            StartDialogue(playerSpeachStart);
+        }
+
+        if (dialogue == "ending1")
+        {
+            nameText.text = "Narrator";
+            List<List<string>> playerSpeachStart = FindObjectOfType<Dialogue>().ending1;
+            StartDialogue(playerSpeachStart);
+        }
+
+        if (dialogue == "ending2")
+        {
+            nameText.text = "Narrator";
+            List<List<string>> playerSpeachStart = FindObjectOfType<Dialogue>().ending2;
+            StartDialogue(playerSpeachStart);
+        }
+
+        if (dialogue == "ending3")
+        {
+            nameText.text = "Narrator";
+            List<List<string>> playerSpeachStart = FindObjectOfType<Dialogue>().ending3;
+            StartDialogue(playerSpeachStart);
+        }
+
 
     }
 }
