@@ -11,6 +11,7 @@ public class PathHandler : MonoBehaviour
     public ChoiseHandler choiseHandler;
     public GameObject DialogObj;
     public GameObject ChoiseObj;
+    public DialogueManager dialogueManager;
 
     public Scene thisScene;
     private Canvas DialogueCanvas;
@@ -25,12 +26,14 @@ public class PathHandler : MonoBehaviour
 
         switch (SceneManager.GetActiveScene().name)
         {
-            case "Start":
-                thisScene = Scene.Start;
+            case "StartScene":
+                  thisScene = Scene.Start;
+                  Invoke("Firstscene", 1);
                 break;
 
-            case "Template_scene":
+            case "IntroScene":
                 thisScene = Scene.Start;
+                Invoke("IntroScene", 1);
                 break;
             case "Template_scene_2":
                 thisScene = Scene.Template;
@@ -39,8 +42,6 @@ public class PathHandler : MonoBehaviour
 
         DialogueCanvas = DialogObj.GetComponent<Canvas>();
         ChoiseCanvas = ChoiseObj.GetComponent<Canvas>();
-        ChoiseCanvas.enabled = false;
-        DialogueCanvas.enabled = true;
 
         SaveState = GameObject.FindGameObjectWithTag("SaveStateHandler").GetComponent<SaveState>();
         loaderofscenes = GetComponent<SceneLoader>();
@@ -60,6 +61,15 @@ public class PathHandler : MonoBehaviour
         }
     }
 
+    public void Firstscene()
+    {
+        TriggerSpeach("start");
+    }
+
+    public void IntroScene()
+    {
+        TriggerSpeach("Intro");
+    }
 
     public void TriggerChoise()
     {
@@ -69,7 +79,7 @@ public class PathHandler : MonoBehaviour
         choiseHandler.ChoiseTimer.GetComponent<TimerProgress>().active = true;
     }
 
-    public void TriggerSpeach()
+    public void TriggerSpeach(string speach)
     {
         ChoiseCanvas.enabled = false;
         DialogueCanvas.enabled = true;
@@ -77,6 +87,7 @@ public class PathHandler : MonoBehaviour
         choiseHandler.Resetchoises();
         choiseHandler.ChoiseTimer.GetComponent<TimerProgress>().active = false;
         choiseHandler.ChoiseTimer.GetComponent<TimerProgress>().Reset();
+        dialogueManager.TriggerDialogue(speach);
 
     }
 
@@ -121,7 +132,7 @@ public class PathHandler : MonoBehaviour
 
             if (thisScene == Scene.Start && choiseHandler.MadeChoise == Choise.Waited)
             {
-                loaderofscenes.LoadSceneFromMenu(3);
+                loaderofscenes.LoadSceneFromMenu(5);
             }
             // End First Scene
 
@@ -154,5 +165,16 @@ public class PathHandler : MonoBehaviour
         }
 
         movingToNextScene = true;
+    }
+
+
+    public void ReturnToMainScreen()
+    {
+        loaderofscenes.LoadSCenesViaLoadingScene(1);
+    }
+
+    public void StartAdventure()
+    {
+        loaderofscenes.LoadSceneFromMenu(2);
     }
 }

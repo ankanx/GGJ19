@@ -19,6 +19,7 @@ public class SceneLoader : MonoBehaviour {
 
     public void LoadSceneFromMenu(int SceneIndex)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneIndex);
     }
 
