@@ -603,7 +603,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ec13c3ba26b08214592cab6f38d5a79d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e395a3ca48533974296c392c33686f9f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1402,6 +1402,7 @@ MonoBehaviour:
   nameText: {fileID: 389349636}
   dialogueText: {fileID: 1468593762}
   InitDialogue: 
+  currentdialog: 
 --- !u!4 &1239445949
 Transform:
   m_ObjectHideFlags: 0

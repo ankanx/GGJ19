@@ -11,7 +11,7 @@ public class deathtrigger : MonoBehaviour
     void Start()
     {
         Invoke("triggerdeathspeach", 0.3f);
-        Invoke("triggerdeath", 3f);
+        Invoke("triggerdeath", 4f);
     }
 
     public void triggerdeathspeach(){
