@@ -62,7 +62,7 @@ public class Dialogue : MonoBehaviour
         new List<string> {
             "Poppy exits from the balcony...",
             "The pavement came closer at lightning speed.",
-            "She prepared to meed her maker.",
+            "She prepared to meet her maker.",
             "Poppy died."
         }
     };
